@@ -2,7 +2,6 @@ import { Title } from "./Title";
 import { Code } from "./Code";
 import { CardImage } from "./CardImage";
 import { Price } from "./Price";
-import { Counter } from "./Counter";
 import { Delivery } from "./Delivery";
 import { Popularity } from "./Popularity";
 import { Tabs } from "./Tabs";
@@ -13,7 +12,7 @@ export const Card = ( {
   price,
   oldPrice,
   delivery,
-  src,
+  images,
   comments,
   initValue,
   tabs,
@@ -22,11 +21,10 @@ export const Card = ( {
     <section>
       <Title title={name} />
       <Code code={code} />
-      <div>
-        <CardImage src={src} alt={name} />
+      <div style={{width: 500}}>
+        <CardImage images={images} />
         <div>
           <Price price={price} oldPrice={oldPrice} initValue={initValue} />
-          
           <Delivery delivery={delivery} />
           <Popularity comments={comments} />
         </div>

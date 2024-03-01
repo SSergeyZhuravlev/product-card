@@ -1,9 +1,15 @@
-export const Description = ( { description } ) => {
+import './Description.css';
+
+export const Description = ( { description, isShowAllDescription, onChangeIsShowAllDescription } ) => {
     return (
         <div>
             <h2>Описание</h2>
-            <p>{description}</p>
-            <button onClick={() => console.log('Подробнее')}>Подробнее</button>
+            <p className="description">{
+                isShowAllDescription ? description : `${description.slice(0, 200)}...`
+            }</p>
+            <button onClick={() => onChangeIsShowAllDescription()}>{
+                isShowAllDescription ? 'Скрыть' : 'Подробнее'
+            }</button>
         </div>
     )
 }
